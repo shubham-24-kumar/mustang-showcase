@@ -1,0 +1,328 @@
+/* Side-by-Side Compare Tool Section */
+.compare-section {
+  position: relative;
+  background: #08080c;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.compare-matrix-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.compare-matrix-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--chrome-border);
+}
+
+/* Compare Selectors Header */
+.compare-selectors-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.compare-slot-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.picker-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-red);
+}
+
+.model-select-input {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.model-select-input:focus,
+.model-select-input:hover {
+  border-color: var(--accent-red);
+}
+
+.compare-vs-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vs-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--border-medium);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-swap-slots {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+  letter-spacing: 0.1em;
+  transition: var(--transition-fast);
+}
+
+.btn-swap-slots:hover {
+  color: var(--accent-red);
+}
+
+/* Vehicles Visual Header */
+.compare-cars-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.compare-car-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.compare-car-card.winner-card {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 25px var(--accent-red-subtle);
+}
+
+.compare-car-img-wrap {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #000000;
+}
+
+.compare-car-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compare-car-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.compare-car-sub {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-red);
+  letter-spacing: 0.1em;
+}
+
+/* Side-by-Side Stat Rows Matrix */
+.compare-stats-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stat-compare-row {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+}
+
+.stat-row-label {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.stat-values-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stat-val-slot {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-val-slot.slot-a {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.stat-val-slot.slot-b {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.winner-tag {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Delta Progress Comparison Bar */
+.delta-bar-container {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-pill);
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.85rem;
+  display: flex;
+}
+
+.delta-fill-a {
+  height: 100%;
+  background: var(--accent-red);
+  transition: width 0.6s ease;
+}
+
+.delta-fill-b {
+  height: 100%;
+  background: #3b82f6;
+  transition: width 0.6s ease;
+}
+
+/* Sticky Bottom Compare Drawer / Tray */
+.compare-sticky-tray {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-glass-heavy);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-accent);
+  padding: 0.85rem 1.5rem;
+  z-index: 950;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.8);
+  transform: translateY(110%);
+  transition: transform var(--transition-normal);
+}
+
+.compare-sticky-tray.active {
+  transform: translateY(0);
+}
+
+.tray-content {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tray-slots {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.tray-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.btn-remove-chip {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn-remove-chip:hover {
+  color: var(--accent-red);
+}
+
+.tray-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .compare-selectors-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .compare-cars-header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .stat-val-slot {
+    font-size: 1.15rem;
+  }
+}

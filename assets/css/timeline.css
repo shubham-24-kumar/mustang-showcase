@@ -1,0 +1,293 @@
+/* 1964-to-Present Generation Timeline Section */
+.timeline-section {
+  position: relative;
+  background: #090a0f;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+/* Generation Decade Selector Track */
+.timeline-scrubber {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 3.5rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.timeline-scrubber::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-track-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--border-medium);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timeline-progress-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 3px;
+  background: var(--red-gradient);
+  box-shadow: 0 0 12px var(--accent-red);
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 14%;
+  transition: width var(--transition-normal);
+}
+
+.gen-node-btn {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.node-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3px solid var(--border-medium);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-bounce);
+}
+
+.node-year {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  transition: var(--transition-fast);
+}
+
+.node-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Active & Hover States */
+.gen-node-btn:hover .node-dot {
+  border-color: var(--chrome-highlight);
+  transform: scale(1.2);
+}
+
+.gen-node-btn.active .node-dot {
+  background: var(--accent-red);
+  border-color: #ffffff;
+  box-shadow: 0 0 16px var(--accent-red-glow);
+  transform: scale(1.35);
+}
+
+.gen-node-btn.active .node-year {
+  color: var(--accent-red);
+}
+
+.gen-node-btn.active .node-label {
+  color: #ffffff;
+}
+
+/* Timeline Generation Showcase Container */
+.timeline-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--red-gradient);
+}
+
+.gen-visual {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000000;
+  border: 1px solid var(--border-subtle);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gen-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.timeline-display:hover .gen-visual img {
+  transform: scale(1.05);
+}
+
+.gen-badge-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--bg-glass-heavy);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-accent);
+  color: var(--accent-red);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gen-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.gen-years-tag {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.gen-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.gen-summary {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.gen-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.gen-highlight-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.highlight-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.highlight-value {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 0.2rem;
+}
+
+.timeline-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-timeline-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-timeline-arrow:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  box-shadow: 0 0 16px var(--accent-red-glow);
+}
+
+.btn-view-gen-models {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid var(--border-medium);
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-view-gen-models:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  background: var(--accent-red-subtle);
+}
+
+@media (max-width: 900px) {
+  .timeline-display {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ford Mustang • 60 Years of American Thunder (1964–Present)</title>
+  <meta name="description" content="An interactive, responsive tribute to the legendary Ford Mustang. Explore 7 generations, technical model cards, side-by-side compare tool, and an authentic V8 exhaust audio room.">
+
+  <!-- Google Fonts: Barlow Condensed & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/sound.css">
+  <link rel="stylesheet" href="assets/css/compare.css">
+
+  <!-- Favicon SVG Pony Badge -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2308080c' stroke='%23e60028' stroke-width='4'/><path d='M25,55 C35,45 50,42 65,46 C75,48 85,58 75,68 C60,65 40,68 25,55 Z' fill='%23ff1a3d'/></svg>">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphic Navigation -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <!-- Mustang Running Horse SVG Emblem -->
+        <svg class="nav-pony-logo" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 36C22 24 38 20 54 22C68 24 82 32 88 40C76 38 60 40 46 48C34 54 22 48 12 36Z" fill="url(#navPonyChrome)"/>
+          <path d="M46 22C42 16 34 14 26 18C30 22 36 24 42 26Z" fill="#ff1a3d"/>
+          <defs>
+            <linearGradient id="navPonyChrome" x1="0" y1="0" x2="100" y2="60" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ffffff"/>
+              <stop offset="0.5" stop-color="#cfd6df"/>
+              <stop offset="1" stop-color="#e60028"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-text-wrap">
+          <span class="brand-title">MUSTANG</span>
+          <span class="brand-subtitle">1964 — PRESENT</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#timelineSection" class="nav-link">Timeline</a></li>
+          <li><a href="#modelsSection" class="nav-link">Showcase</a></li>
+          <li><a href="#soundSection" class="nav-link">Roar Sound Room</a></li>
+          <li><a href="#compareSection" class="nav-link">Side-by-Side</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#compareSection" class="btn-nav-compare" id="btnNavCompare">
+          <span>Compare</span>
+          <span class="compare-badge-count" id="navCompareBadge">2</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Fullscreen Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg">
+      <div class="hero-vignette"></div>
+      <div class="hero-grid-pattern"></div>
+      <div class="hero-speed-lines"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge-wrap">
+        <span>⚡ 60 Years of High-Octane Heritage</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-line-1">AMERICAN</span>
+        <span class="title-line-2">THUNDER <span class="title-accent">REIGN</span></span>
+      </h1>
+
+      <p class="hero-desc">
+        From the revolutionary 1964½ World's Fair debut to the track-destroying 500-horsepower Dark Horse. 
+        Experience six decades of unfiltered V8 symphony, motorsport dominance, and relentless innovation.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#timelineSection" class="btn-primary">
+          <span>Explore 7 Generations</span>
+          <span>↓</span>
+        </a>
+        <a href="#soundSection" class="btn-secondary">
+          <span>🔊 Fire Up The Engines</span>
+        </a>
+      </div>
+
+      <!-- Hero Stats Bar -->
+      <div class="hero-stats-bar">
+        <div class="hero-stat-item">
+          <div class="stat-value">1964<span class="highlight">½</span></div>
+          <div class="stat-label">Debut Year</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="stat-value">7</div>
+          <div class="stat-label">Iconic Generations</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="stat-value">662 <span class="highlight">HP</span></div>
+          <div class="stat-label">Peak Shelby V8</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="stat-value">202 <span class="highlight">MPH</span></div>
+          <div class="stat-label">Fastest Factory Top Speed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mouse Scroll Down Indicator -->
+    <a href="#timelineSection" class="hero-scroll-indicator" aria-label="Scroll to Timeline">
+      <span>Scroll</span>
+      <div class="mouse-icon">
+        <div class="mouse-wheel"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- 2. 1964-to-Present Generation Timeline -->
+  <section class="section timeline-section" id="timelineSection">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Evolution of an American Icon</span>
+        <h2 class="section-title">Generations Timeline</h2>
+        <p class="section-subtitle">
+          Trace the continuous bloodline from Lee Iacocca's 1964 pony car rebellion through the fuel-crisis survival, 
+          Fox Body street supremacy, retro revival, and today's digital fighter-jet cockpit.
+        </p>
+      </div>
+
+      <!-- Scrubber Track Navigation -->
+      <div class="timeline-scrubber" id="timelineScrubber">
+        <div class="timeline-track-line"></div>
+        <div class="timeline-progress-line" id="timelineProgressLine"></div>
+
+        <button class="gen-node-btn active" data-gen="1">
+          <div class="node-dot"></div>
+          <span class="node-year">1964½</span>
+          <span class="node-label">Gen 1: Original</span>
+        </button>
+
+        <button class="gen-node-btn" data-gen="2">
+          <div class="node-dot"></div>
+          <span class="node-year">1974</span>
+          <span class="node-label">Gen 2: Mustang II</span>
+        </button>
+
+        <button class="gen-node-btn" data-gen="3">
+          <div class="node-dot"></div>
+          <span class="node-year">1979</span>
+          <span class="node-label">Gen 3: Fox Body</span>
+        </button>
+
+        <button class="gen-node-btn" data-gen="4">
+          <div class="node-dot"></div>
+          <span class="node-year">1994</span>
+          <span class="node-label">Gen 4: SN95</span>
+        </button>
+
+        <button class="gen-node-btn" data-gen="5">
+          <div class="node-dot"></div>
+          <span class="node-year">2005</span>
+          <span class="node-label">Gen 5: Retro</span>
+        </button>
+
+        <button class="gen-node-btn" data-gen="6">
+          <div class="node-dot"></div>
+          <span class="node-year">2015</span>
+          <span class="node-label">Gen 6: S550</span>
+        </button>
+
+        <button class="gen-node-btn" data-gen="7">
+          <div class="node-dot"></div>
+          <span class="node-year">2024</span>
+          <span class="node-label">Gen 7: S650</span>
+        </button>
+      </div>
+
+      <!-- Timeline Active Generation Showcase Card -->
+      <div class="timeline-display" id="timelineContainer">
+        <!-- Rendered dynamically by timeline.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Dynamic Model Cards Showcase -->
+  <section class="section models-section" id="modelsSection">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Stable</span>
+        <h2 class="section-title">Model Showcase</h2>
+        <p class="section-subtitle">
+          Real-time catalog loaded dynamically from <code style="color: var(--accent-red); font-family: var(--font-mono);">models.json</code>. 
+          Filter by era, review launch prices and powertrain specs, or add vehicles to the compare matrix.
+        </p>
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="models-toolbar">
+        <div class="toolbar-top-row">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="modelSearch" class="search-input" placeholder="Search by model, engine (e.g. Coyote, Cobra, Boss)...">
+          </div>
+
+          <div class="sort-group">
+            <label for="modelSort" class="sort-label">Sort By:</label>
+            <select id="modelSort" class="sort-select">
+              <option value="year-asc">Launch Year (Oldest First)</option>
+              <option value="year-desc">Launch Year (Newest First)</option>
+              <option value="hp-desc">Horsepower (Highest First)</option>
+              <option value="price-asc">Launch MSRP (Lowest First)</option>
+              <option value="price-desc">Launch MSRP (Highest First)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Generation Filter Pills -->
+        <div class="filter-pills" id="generationFilterPills">
+          <button class="filter-pill active" data-gen="all">All Models (12)</button>
+          <button class="filter-pill" data-gen="1">Gen 1 (1964½-73)</button>
+          <button class="filter-pill" data-gen="2">Gen 2 (1974-78)</button>
+          <button class="filter-pill" data-gen="3">Gen 3 (1979-93)</button>
+          <button class="filter-pill" data-gen="4">Gen 4 (1994-04)</button>
+          <button class="filter-pill" data-gen="5">Gen 5 (2005-14)</button>
+          <button class="filter-pill" data-gen="6">Gen 6 (2015-23)</button>
+          <button class="filter-pill" data-gen="7">Gen 7 (2024+)</button>
+        </div>
+      </div>
+
+      <!-- Models Grid Container -->
+      <div class="models-grid" id="modelsGrid">
+        <!-- Rendered dynamically by model-cards.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Roar of the Pony: Sound Section with Animated Waveform -->
+  <section class="section sound-section" id="soundSection">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Acoustic Engineering</span>
+        <h2 class="section-title">Roar of the Pony</h2>
+        <p class="section-subtitle">
+          Experience the acoustic signature of American displacement. Powered by the Web Audio API with real-time 
+          harmonic synthesis and live canvas waveform oscilloscopy.
+        </p>
+      </div>
+
+      <!-- Sound Console Box -->
+      <div class="sound-console">
+        <div class="sound-active-info">
+          <div>
+            <h3 class="sound-meta-title" id="soundActiveTitle">1964½ Ford Mustang Hardtop 289 V8</h3>
+            <div class="sound-meta-engine" id="soundActiveEngine">4.7L (289 ci) Windsor V8 • 210 HP</div>
+          </div>
+          <div class="sound-mode-badge">
+            <span class="sound-pulse-dot"></span>
+            <span id="soundActiveCharacter">Classic American Rumble</span>
+          </div>
+        </div>
+
+        <!-- Realtime Animated Waveform Canvas Container -->
+        <div class="visualizer-container">
+          <canvas id="waveformCanvas" class="waveform-canvas"></canvas>
+          <div class="visualizer-overlay">
+            <div>Harmonics: <span>Active</span></div>
+            <div>Oscillator: <span>V8 Cross-Plane</span></div>
+          </div>
+        </div>
+
+        <!-- Sound Controls & Tachometer Row -->
+        <div class="sound-controls-row">
+          <div class="playback-buttons">
+            <button class="btn-sound-main" id="btnMainPlaySound" title="Start Engine">▶</button>
+            <button class="btn-sound-rev" id="btnRevThrottle">
+              <span>🏎️ REV THROTTLE</span>
+            </button>
+          </div>
+
+          <!-- Dynamic SVG Tachometer / Rev Needle Gauge -->
+          <div class="tachometer-widget">
+            <div class="gauge-svg-container">
+              <svg viewBox="0 0 140 80" width="140" height="80">
+                <path d="M 15 70 A 55 55 0 0 1 125 70" fill="none" stroke="#272733" stroke-width="8"/>
+                <path d="M 95 24 A 55 55 0 0 1 125 70" fill="none" stroke="#e60028" stroke-width="8"/>
+                <!-- Ticks -->
+                <circle cx="70" cy="70" r="10" fill="#181822" stroke="#ffffff" stroke-width="2"/>
+                <!-- Needle -->
+                <line id="tachNeedle" class="gauge-needle" x1="70" y1="70" x2="70" y2="20" stroke="#ff2a4b" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="tachometer-readout">
+              <div class="rpm-number" id="tachRpmNumber">850</div>
+              <div class="rpm-unit">RPM</div>
+            </div>
+          </div>
+
+          <div style="text-align: right; color: var(--text-secondary); font-size: 0.85rem;">
+            Click <strong>REV THROTTLE</strong> to sweep the tachometer and trigger aggressive exhaust harmonics.
+          </div>
+        </div>
+
+        <!-- Sound Models Playlist Selector -->
+        <div class="sound-models-list">
+          <div class="sound-list-title">Select Any Mustang Engine Sound:</div>
+          <div class="sound-buttons-grid" id="soundModelButtons">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Side-by-Side Compare Tool -->
+  <section class="section compare-section" id="compareSection">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Direct Showdown</span>
+        <h2 class="section-title">Side-by-Side Comparison</h2>
+        <p class="section-subtitle">
+          Pit any two Mustang generations against each other. Compare displacement, quarter-mile acceleration, 
+          launch MSRP, and power-to-weight ratios with live advantage delta bars.
+        </p>
+      </div>
+
+      <div class="compare-matrix-box">
+        <!-- Slot Pickers -->
+        <div class="compare-selectors-row">
+          <div class="compare-slot-picker">
+            <label for="compareSelectA" class="picker-label">Vehicle A (Left)</label>
+            <select id="compareSelectA" class="model-select-input"></select>
+          </div>
+
+          <div class="compare-vs-badge">
+            <div class="vs-circle">VS</div>
+            <button class="btn-swap-slots" id="btnSwapCompare" title="Swap vehicles">⇄ Swap</button>
+          </div>
+
+          <div class="compare-slot-picker">
+            <label for="compareSelectB" class="picker-label">Vehicle B (Right)</label>
+            <select id="compareSelectB" class="model-select-input"></select>
+          </div>
+        </div>
+
+        <!-- Comparison Matrix Table & Visual Deltas -->
+        <div id="compareMatrixContainer">
+          <!-- Rendered dynamically by compare.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Quick Compare Drawer (Mobile & Desktop) -->
+  <div class="compare-sticky-tray" id="compareStickyTray">
+    <div class="tray-content">
+      <div class="tray-slots">
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-red); font-weight: 700;">COMPARING:</span>
+        <div class="tray-chip" id="trayChipA"><span>Vehicle A</span></div>
+        <span style="color: var(--text-muted); font-weight: 800;">VS</span>
+        <div class="tray-chip" id="trayChipB"><span>Vehicle B</span></div>
+      </div>
+      <div class="tray-actions">
+        <button class="btn-primary" id="btnTrayCompare" style="padding: 0.5rem 1.4rem; font-size: 0.85rem;">View Full Comparison</button>
+        <button class="btn-secondary" id="btnTrayClear" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top">↑</button>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <div class="brand-text-wrap" style="margin-bottom: 0.75rem;">
+            <span class="brand-title">FORD MUSTANG</span>
+            <span class="brand-subtitle">1964 — PRESENT</span>
+          </div>
+          <p>
+            An interactive tribute celebrating 60 continuous years of the Ford Mustang. Designed with high-performance CSS, vanilla JavaScript ES6+, Web Audio API synthesis, and GSAP ScrollTrigger.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Hero & Stats</a></li>
+            <li><a href="#timelineSection">7 Generations Timeline</a></li>
+            <li><a href="#modelsSection">Model Card Showcase</a></li>
+            <li><a href="#soundSection">Roar Sound Room</a></li>
+            <li><a href="#compareSection">Side-by-Side Compare</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Data & Audits</h4>
+          <ul class="footer-links">
+            <li><a href="models.json" target="_blank">View models.json API</a></li>
+            <li><a href="README.md" target="_blank">Price Verification Audit</a></li>
+            <li>
+              <a href="README.md" class="price-audit-tag">
+                <span>⚠️</span> 12 Prices Pending Monroney Audit
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 1964–2026 Ford Mustang Showcase. Built for automotive enthusiasts.</div>
+        <div>All vehicle trademarks and logos belong to Ford Motor Company.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP 3 & ScrollTrigger via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Application Modules -->
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
